@@ -2,7 +2,7 @@ import babel, { TransformOptions } from '@babel/core';
 import { Loader } from 'esbuild';
 import { Plugin } from 'vite';
 
-import { esbuildPluginBabel } from './esbuildBabel';
+import { esbuildPluginBabel } from './esbuildBabel.js';
 
 export interface BabelPluginOptions {
 	apply?: 'serve' | 'build';
@@ -49,4 +49,4 @@ const babelPlugin = ({ babelConfig = {}, filter = DEFAULT_FILTER, apply, loader 
 };
 
 export default babelPlugin;
-export * from './esbuildBabel';
+export * from './esbuildBabel.js';
