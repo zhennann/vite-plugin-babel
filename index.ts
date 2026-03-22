@@ -37,7 +37,7 @@ const babelPlugin = ({
     config() {
       return {
         optimizeDeps: {
-          esbuildOptions: {
+          rolldownOptions: {
             plugins: [
               esbuildPluginBabel({
                 config: { ...babelConfig },
