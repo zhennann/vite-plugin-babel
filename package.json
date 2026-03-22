@@ -1,10 +1,25 @@
 {
   "name": "@cabloy/vite-plugin-babel",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Runs Babel in Vite during all commands",
-  "publishConfig": {
-    "access": "public"
+  "keywords": [
+    "babel",
+    "vite",
+    "vite-plugin"
+  ],
+  "homepage": "https://github.com/owlsdepartment/vite-plugin-babel#readme",
+  "bugs": {
+    "url": "https://github.com/owlsdepartment/vite-plugin-babel/issues"
   },
+  "license": "MIT",
+  "author": "Miłosz Mandowski",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owlsdepartment/vite-plugin-babel.git"
+  },
+  "files": [
+    "/dist"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -12,27 +27,12 @@
       "import": "./dist/index.js"
     }
   },
-  "files": [
-    "/dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rm -rf dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/owlsdepartment/vite-plugin-babel.git"
-  },
-  "author": "Miłosz Mandowski",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/owlsdepartment/vite-plugin-babel/issues"
-  },
-  "homepage": "https://github.com/owlsdepartment/vite-plugin-babel#readme",
-  "keywords": [
-    "vite-plugin",
-    "vite",
-    "babel"
-  ],
   "dependencies": {
     "esbuild": "^0.20.1"
   },

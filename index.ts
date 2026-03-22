@@ -1,13 +1,13 @@
-import babel, { TransformOptions } from "@babel/core";
-import { Loader } from "esbuild";
-import { createFilter, FilterPattern, Plugin } from "vite";
+import babel, { TransformOptions } from '@babel/core';
+import { Loader } from 'esbuild';
+import { createFilter, FilterPattern, Plugin } from 'vite';
 
-import { esbuildPluginBabel } from "./esbuildBabel.js";
-import { Filter, testFilter } from "./filter.js";
+import { esbuildPluginBabel } from './esbuildBabel.js';
+import { Filter, testFilter } from './filter.js';
 
 export interface BabelPluginOptions {
-  apply?: Plugin["apply"];
-  enforce?: Plugin["enforce"];
+  apply?: Plugin['apply'];
+  enforce?: Plugin['enforce'];
   babelConfig?: TransformOptions;
   filter?: Filter;
   include?: FilterPattern;
@@ -23,13 +23,13 @@ const babelPlugin = ({
   include,
   exclude,
   apply,
-  enforce = "pre",
+  enforce = 'pre',
   loader,
 }: BabelPluginOptions = {}): Plugin => {
   const customFilter = createFilter(include, exclude);
 
   return {
-    name: "babel-plugin",
+    name: 'babel-plugin',
 
     apply,
     enforce,
@@ -56,14 +56,12 @@ const babelPlugin = ({
 
       if (!shouldTransform) return;
 
-      return babel
-        .transformAsync(code, { filename: id, ...babelConfig })
-        .then((result) => ({ code: result?.code ?? "", map: result?.map }));
+      return babel.transformAsync(code, { filename: id, ...babelConfig }).then(result => ({ code: result?.code ?? '', map: result?.map }));
     },
   };
 };
 
 export default babelPlugin;
 
-export * from "./esbuildBabel.js";
+export * from './esbuildBabel.js';
 export type { Filter };
